@@ -1,13 +1,15 @@
-// Using Bad-SUDO CUSTOM https://github.com/jajavaa/Bad-SUDO
+// Using Bad-SUDO CUSTOM EXTENDED Source==>https://github.com/jajavaa/Bad-SUDO
 // SUDO CODE NOT COMPLETE.
 
 CLASS Grants :
 
+    UNIQUE OPEN INTEGER fee EQUALS 3000
     STRING id EQUALS NULL
     STRING name EQUALS NULL
-    INT fees EQUALS NULL
-    INTEGER ARRAY mark EQUALS NULL
-    STRING ARRAY subjects EQUALS NULL
+    STRING ARRAY subjects EQUALS (Software Development, Mathematics, Learning to Learn, Computer Architecture)
+    INTEGER ARRAY mark EQUALS SIZE OF THIS IS subjects LENGTH
+
+    NEW OBJECT ArrayList OF DaTATYPE Student NAMED studentArray EQUALS DO ArrayList ()
 
     PROGRAM_INIT () :
         DO auth ()
@@ -41,12 +43,11 @@ CLASS Grants :
             PRINT "4. Grant Category Information"
             PRINT "5. Exit"
             choice EQUALS user input
-            IF choice MATCHES "0":
-                DO register () : //DONE
             IF choice MATCHES "1":
-                DO StudentGrant () //DONE
+                DO register ()
+                DO studentGrant ()
             IF choice MATCHES "2":
-                DO StudentAverage () //DONE
+                PRINT "Your current overall student average result is: " + DO studentAvg ()
             IF choice MATCHES "3":
                 DO FeeData ()
             IF choice MATCHES "4":
@@ -58,97 +59,169 @@ CLASS Grants :
         LOOP END
     METHOD END
 
-        register () :
-            FOR LOOP INTEGER i EQUALS 0, i LESS THAN 3, POST+ i:
-                PRINT "Enter student id: "
-                id EQUALS user input
-                IF id CHARACTER AT 0 CONTAINS "X":
-                    LOOP END
-                ELSE IF i EQUALS 3:
-                    DO UserValid () :
-                ELSE:
-                    REPEAT THIS LOOP
+    register () :
+        FOR LOOP INTEGER i EQUALS 0, i LESS THAN 3, POST+ i:
+            PRINT "Enter student id: "
+            id EQUALS user input
+            IF id CHARACTER AT 0 CONTAINS "X":
+                 LOOP END
+            ELSE IF i EQUALS 3:
+                 DO UserValid () :
+            ELSE:
+                 REPEAT THIS LOOP
             FOR LOOP END
-            FOR LOOP INTEGER i EQUALS 0, i LESS THAN 3, POST+ i:
-                PRINT "Enter student name: "
+        FOR LOOP INTEGER i EQUALS 0, i LESS THAN 3, POST+ i:
+            PRINT "Enter student name: "
                 name EQUALS user input
-                IF name CONTAINS " ":
-                    LOOP END
-                ELSE IF i EQUALS 3:
-                    DO UserValid () :
-                ELSE:
-                    CONTINUE
-            FOR LOOP END
-            STRING dob EQUALS NULL
-            FOR LOOP INTEGER i EQUALS 0, i LESS THAN 3, POST+ i:
-                PRINT "Enter student date of birth: "
-                dob EQUALS user input
-                IF dob IS NOT(EMPTY) AND CHARACTER AT 2 EQUAL TO "/" AND CHARACTER AT 4 EQUAL TO "/":
-                    LOOP END
-                 ELSE:
-                    CONTINUE
-            FOR LOOP END
-            INT subjectCount EQUALS NULL
-            FOR LOOP INTEGER i EQUALS 0, i LESS OR EQUAL TO 3, POST+ i:
-                PRINT "How many subjects does student study: "
-                subjectCount EQUALS user input
-                IF subjectCount IS NOT(EMPTY) AND IS A NUMBER AND LESS THAN 10:
-                    LOOP END
-                ELSE IF i EQUALS 3:
-                    DO UserValid () :
-                ELSE:
-                    CONTINUE
-            FOR LOOP END
-            SIZE OF marks IS subjectCount
-            SIZE OF subjects IS subjectCount
-            FOR LOOP INTEGER i EQUALS 0, i LESS THAN subjectCount, POST+ i:
-                PRINT "Subject name: "
-                subjects POSITION AT i EQUALS user input
-                PRINT "Subject final mark out of 100: "
-                marks POSITION AT i EQUALS user input
-            LOOP END
-            PRINT "Check that all details are right."
-            PRINT "Student ID:" +id
-            PRINT "Student name: " +name
-            PRINT "Student D.O.B: " +dob
-            PRINT "Subject count: " +subjectCount
-            FOR LOOP INTEGER i EQUALS 0, i LESS THAN subjectCount, POST+ i:
-                PRINT "Subject: " + subjects POSITION AT i + " Mark: " + marks POSITION AT i
-            LOOP END
-            PRINT "ENTER 1 to CONFIRM"
-            PRINT "ENTER 2 to REPEAT"
-            INT choice EQUALS user input
-            IF choice EQUAL TO 1:
-                RETURN
-            ELSE IF choice EQUAL TO 2:
-                DO register ()
-        METHOD END
+            IF name CONTAINS " ":
+                LOOP END
+            ELSE IF i EQUALS 3:
+                DO UserValid () :
+            ELSE:
+                CONTINUE
+        FOR LOOP END
+        FOR LOOP INTEGER i EQUALS 0, i LESS THAN subjects LENGTH, POST+ i:
+             PRINT "Subject name: " + subjects POSITION AT i
+             PRINT "Subject final mark out of 100: "
+             marks POSITION AT i EQUALS user input
+        FOR LOOP END
+        PRINT "Check that all details are right."
+        PRINT "Student ID:" +id
+        PRINT "Student name: " +name
+        FOR LOOP INTEGER i EQUALS 0, i LESS THAN subjectCount, POST+ i:
+             PRINT "Subject: " + subjects POSITION AT i + " Mark: " + marks POSITION AT i
+        LOOP END
+        PRINT "ENTER 1 to CONFIRM"
+        PRINT "ENTER 2 to REPEAT"
+        INT choice EQUALS user input
+        IF choice EQUAL TO 1:
+            RETURN
+        ELSE IF choice EQUAL TO 2:
+            DO add (NEW OBJECT Student (name )) of
+            DO register ()
+    METHOD END
 
-        studentGrant () :
-            DOUBLE avg EQUALS DO studentAvg ()
-            PRINT "Student id: " + id
-            PRINT "Student name: " + name
-            IF avg MORE OR EQUALS TO 90:
-                PRINT "You are eligible for: " + fee DIV 1.0 " which is : 100%"
-            ELSE IF avg LESS THAN 90:
-                PRINT "You are eligible for: " + fee DIV .75 " which is : 75%"
-            ELSE IF avg LESS THAN 70:
-                PRINT "You are eligible for: " + fee DIV .50 " which is : 50%"
-            ELSE IF avg LESS THAN 50:
-                PRINT "You are not eligible for a grant."
-        METHOD END
+    studentGrant () :
+        DOUBLE avg EQUALS DO studentAvg ()
+        PRINT "Student id: " + id
+        PRINT "Student name: " + name
+        IF avg MORE OR EQUALS TO 90:
+            PRINT "You are eligible for: " + fee DIV 1.0 " which is : 100%"
+            DO setGrant(100) IN CLASS Student
+        ELSE IF avg LESS THAN 90:
+            PRINT "You are eligible for: " + fee DIV .75 " which is : 75%"
+            DO setGrant(75) IN CLASS Student
+        ELSE IF avg LESS THAN 70:
+            PRINT "You are eligible for: " + fee DIV .50 " which is : 50%"
+            DO setGrant(50) IN CLASS Student
+        ELSE IF avg LESS THAN 50:
+            PRINT "You are not eligible for a grant."
+            DO setGrant(0) IN CLASS Student
+    METHOD END
 
-        RETURNS DOUBLE studentAvg () :
-            DOUBLE avg EQUALS 0.0
-            FOR LOOP INTEGER i EQUALS 0, I IS LESS THAN marks LENGTH, POST+ i:
-                avg ADD EQUALS marks POSITION AT i
-            FOR LOOP END
-            avg DIV EQUALS marks LENGTH
-            IS RETURNING avg
-        METHOD END
+    RETURNS DOUBLE studentAvg () :
+        DOUBLE avg EQUALS 0.0
+        FOR LOOP INTEGER i EQUALS 0, I IS LESS THAN marks LENGTH, POST+ i:
+            avg ADD EQUALS marks POSITION AT i
+        FOR LOOP END
+        avg DIV EQUALS marks LENGTH
+        IS RETURNING avg
+    METHOD END
 
-        UserValid () :
-            PRINT "Input is invalid."
-        METHOD END
+    feeData () :
+         PRINT "Students who registered for grant: " + DO size () OF OBJECT studentArray
+         INTEGER received EQUALS 0
+         DOUBLE moneySent EQUALS 0
+         FOR LOOP THROUGH studentArray
+            IF DO getGrantStat IS MORE OR EQUAL TO 50:
+                POST+ received
+                moneySent ADD EQUALS fee MULTI (DO getGrantStat DIV 100)
+         LOOP END
+         PRINT "Students who received grant: " + received
+         PRINT "Grant money sent out: " + moneySent
+    METHOD END
+
+    grantCatInfo () :
+        INT full EQUALS 0
+        INT threeFourths EQUALS 0
+        INT half EQUALS 0
+        INT noGrant EQUALS 0
+        FOR LOOP THROUGH studentArray
+            INT temp EQUALS DO getGrantStat ()
+            IF temp EQUAL TO 100
+                POST+ full
+            ELSE IF temp EQUAL TO 75
+                POST+ threefourths
+            ELSE IF temp EQUAL TO 50
+                POST+ half
+            ELSE IF temp EQUAL TO 0
+                POST+ noGrant
+        FOR LOOP END
+        PRINT "Full grant students: " +full
+        PRINT "Three fourths grant students: " +threeFourths
+        PRINT "Half grant students: " +half
+        PRINT "No grant students: " +noGrant
+    METHOD END
+
+    UserValid () :
+        PRINT "Input is invalid."
+    METHOD END
 CLASS END
 
+CLASS Student :
+    SECRET STRING id EQUALS NULL
+    SECRET STRING name EQUALS NULL
+    SECRET STRING ARRAY subjects EQUALS NULL
+    SECRET INTEGER ARRAY marks EQUALS NULL
+    SECRET INTEGER grantStat EQUALS 0
+    OBJECT Student (STRING id, STRING name, STRING[] subjects, INT[] marks) :
+        THIS id EQUALS id
+        THIS name EQUALS name
+        THIS subjects EQUALS subjects
+        THIS marks EQUALS marks
+    OBJECT END
+
+    OPEN RETURNS STRING getId () :
+        IS RETURNING id
+    METHOD END
+
+    OPEN RETURNS STRING getName () :
+        IS RETURNING name
+    METHOD END
+
+    OPEN RETURNS STRING ARRAY getSubjectArray () :
+        IS RETURNING subjects
+    METHOD END
+
+    OPEN RETURNS STRING ARRAY getMarkArray () :
+        IS RETURNING marks
+    METHOD END
+
+    OPEN RETURNS STRING getSubject (INTEGER position) :
+        IS RETURNING subjects POSITION AT position
+    METHOD END
+
+    OPEN RETURNS INTEGER getMark (INTEGER position) :
+        IS RETURNING marks POSITION AT position
+    METHOD END
+
+    UNIQUE OPEN setGrant (INTEGER grant) :
+        grantStat EQUALS grant
+    METHOD END
+
+    UNIQUE OPEN RETURNS INTEGER getGrantStat () :
+        IS RETURNING grantStat
+    METHOD END
+
+    OPEN printAll () :
+        PRINT DO getID ()
+        PRINT DO getName ()
+        FOR LOOP INTEGER i EQUALS 0, i LESS THAN DO getSubjectArray () LENGTH, POST+ i:
+            PRINT "Subject: " + DO getSubject (i) + "Mark: " DO getMark (i)
+        FOR LOOP END
+        IF DO getGrantStat () EQUAL TO 0:
+            PRINT "Grant not issued."
+        ELSE:
+            PRINT "Grant issued with: " + DO getGrantStat () + "%"
+    METHOD END
+CLASS END
