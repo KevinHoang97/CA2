@@ -1,0 +1,48 @@
+package com.shared.ca.java;
+
+/**
+ * Created by Konrad Gladysz on 05/11/2016.
+ * This class is part of 'CA2 for Java'.
+ */
+public class Student {
+
+    private String id;
+    private String name;
+    private String[] subjects = new String[4];
+    private int[] marks = new int[4];
+    private int grantStat = 0;
+
+    public Student(String id, String name ,String[] subjects, int[] marks, int grantStat) {
+        this.id = id;
+        this.name = name;
+        this.subjects = subjects;
+        this.marks = marks;
+        this.grantStat = grantStat;
+    }
+
+    public String getId() {
+        return id;
+    }
+    public String getName() {
+        return name;
+    }
+    public String[] getSubjectsArray() {
+        return subjects;
+    }
+    public int[] getMarksArray() {
+        return marks;
+    }
+    public String getSubject(int pos) {
+        return subjects[pos];
+    }
+    public int getMark(int pos) {
+        return  marks[pos];
+    }
+    public void setGrantStat(int grantStat) {
+        this.grantStat = grantStat;
+    }
+    public int getGrantStat() {
+        return grantStat;
+    }
+
+}
