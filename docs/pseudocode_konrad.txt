@@ -9,7 +9,7 @@ CLASS Grants :
     STRING ARRAY subjects EQUALS (Software Development, Mathematics, Learning to Learn, Computer Architecture)
     INTEGER ARRAY mark EQUALS SIZE OF THIS IS subjects LENGTH
 
-    NEW OBJECT ArrayList OF DaTATYPE Student NAMED studentArray EQUALS DO ArrayList ()
+    NEW OBJECT ArrayList OF DATATYPE Student NAMED studentArray EQUALS DO ArrayList ()
 
     PROGRAM_INIT () :
         DO auth ()
