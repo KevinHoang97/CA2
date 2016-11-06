@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e67880d-34b0-4b71-9388-bebc7eeafbdb" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/shared/ca/java/Student.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/pseudocode_konrad.txt" afterPath="$PROJECT_DIR$/docs/pseudocode_konrad.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/shared/ca/java/Menu.java" afterPath="$PROJECT_DIR$/src/com/shared/ca/java/Menu.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/shared/ca/java/Student.java" afterPath="$PROJECT_DIR$/src/com/shared/ca/java/Student.java" />
     </list>
     <ignored path="CA2.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,22 +25,16 @@
     <favorites_list name="CA2" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
+    <splitter split-orientation="horizontal" split-proportion="0.50267696">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="Menu.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/com/shared/ca/java/Menu.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="427">
-                  <caret line="39" column="48" selection-start-line="39" selection-start-column="48" selection-end-line="39" selection-end-column="48" />
+                <state relative-caret-position="-1428">
+                  <caret line="27" column="24" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
                   <folding>
                     <element signature="imports" expanded="true" />
-                    <element signature="e#302#303#0" expanded="true" />
-                    <element signature="e#328#329#0" expanded="true" />
-                    <element signature="e#349#350#0" expanded="true" />
-                    <element signature="e#371#372#0" expanded="true" />
-                    <element signature="e#1098#1099#0" expanded="true" />
-                    <element signature="e#1156#1157#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -49,26 +43,9 @@
           <file leaf-file-name="Student.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/com/shared/ca/java/Student.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="42">
-                  <caret line="4" column="40" selection-start-line="4" selection-start-column="40" selection-end-line="4" selection-end-column="40" />
-                  <folding>
-                    <element signature="e#582#583#0" expanded="true" />
-                    <element signature="e#607#608#0" expanded="true" />
-                    <element signature="e#637#638#0" expanded="true" />
-                    <element signature="e#664#665#0" expanded="true" />
-                    <element signature="e#705#706#0" expanded="true" />
-                    <element signature="e#736#737#0" expanded="true" />
-                    <element signature="e#771#772#0" expanded="true" />
-                    <element signature="e#799#800#0" expanded="true" />
-                    <element signature="e#839#840#0" expanded="true" />
-                    <element signature="e#875#876#0" expanded="true" />
-                    <element signature="e#909#910#0" expanded="true" />
-                    <element signature="e#943#944#0" expanded="true" />
-                    <element signature="e#989#990#0" expanded="true" />
-                    <element signature="e#1031#1032#0" expanded="true" />
-                    <element signature="e#1063#1064#0" expanded="true" />
-                    <element signature="e#1095#1096#0" expanded="true" />
-                  </folding>
+                <state relative-caret-position="314">
+                  <caret line="26" column="47" selection-start-line="26" selection-start-column="47" selection-end-line="26" selection-end-column="47" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -76,12 +53,12 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="pseudocode_konrad.txt" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/docs/pseudocode_konrad.txt">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="187">
-                  <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
+                <state relative-caret-position="17">
+                  <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -110,8 +87,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/com/shared/ca/java/Student.java" />
         <option value="$PROJECT_DIR$/docs/pseudocode_konrad.txt" />
+        <option value="$PROJECT_DIR$/src/com/shared/ca/java/Student.java" />
         <option value="$PROJECT_DIR$/src/com/shared/ca/java/Menu.java" />
       </list>
     </option>
@@ -147,7 +124,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -219,6 +195,7 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -538,7 +515,7 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -574,7 +551,9 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
@@ -582,6 +561,32 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/com/shared/ca/java/Menu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="31" column="40" selection-start-line="31" selection-start-column="40" selection-end-line="31" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/shared/ca/java/Student.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="40" selection-start-line="4" selection-start-column="40" selection-end-line="4" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/pseudocode_konrad.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/docs/pseudocode_konrad.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -596,12 +601,6 @@
           <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#302#303#0" expanded="true" />
-            <element signature="e#328#329#0" expanded="true" />
-            <element signature="e#349#350#0" expanded="true" />
-            <element signature="e#371#372#0" expanded="true" />
-            <element signature="e#1098#1099#0" expanded="true" />
-            <element signature="e#1156#1157#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -614,51 +613,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/shared/ca/java/Student.java">
+    <entry file="file://$PROJECT_DIR$/docs/pseudocode_konrad.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="4" column="40" selection-start-line="4" selection-start-column="40" selection-end-line="4" selection-end-column="40" />
-          <folding>
-            <element signature="e#582#583#0" expanded="true" />
-            <element signature="e#607#608#0" expanded="true" />
-            <element signature="e#637#638#0" expanded="true" />
-            <element signature="e#664#665#0" expanded="true" />
-            <element signature="e#705#706#0" expanded="true" />
-            <element signature="e#736#737#0" expanded="true" />
-            <element signature="e#771#772#0" expanded="true" />
-            <element signature="e#799#800#0" expanded="true" />
-            <element signature="e#839#840#0" expanded="true" />
-            <element signature="e#875#876#0" expanded="true" />
-            <element signature="e#909#910#0" expanded="true" />
-            <element signature="e#943#944#0" expanded="true" />
-            <element signature="e#989#990#0" expanded="true" />
-            <element signature="e#1031#1032#0" expanded="true" />
-            <element signature="e#1063#1064#0" expanded="true" />
-            <element signature="e#1095#1096#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="17">
+          <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docs/pseudocode_konrad.txt">
+    <entry file="file://$PROJECT_DIR$/src/com/shared/ca/java/Student.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
+        <state relative-caret-position="314">
+          <caret line="26" column="47" selection-start-line="26" selection-start-column="47" selection-end-line="26" selection-end-column="47" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/shared/ca/java/Menu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="427">
-          <caret line="39" column="48" selection-start-line="39" selection-start-column="48" selection-end-line="39" selection-end-column="48" />
+        <state relative-caret-position="-1428">
+          <caret line="27" column="24" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#302#303#0" expanded="true" />
-            <element signature="e#328#329#0" expanded="true" />
-            <element signature="e#349#350#0" expanded="true" />
-            <element signature="e#371#372#0" expanded="true" />
-            <element signature="e#1098#1099#0" expanded="true" />
-            <element signature="e#1156#1157#0" expanded="true" />
           </folding>
         </state>
       </provider>

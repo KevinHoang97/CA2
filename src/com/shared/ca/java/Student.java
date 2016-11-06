@@ -7,22 +7,24 @@ package com.shared.ca.java;
 public class Student {
 
     private String id;
+    private String passwd;
     private String name;
     private String[] subjects = new String[4];
     private int[] marks = new int[4];
     private int grantStat = 0;
 
-    public Student(String id, String name ,String[] subjects, int[] marks, int grantStat) {
+    public Student(String id, String passwd, String name, String[] subjects, int[] marks) {
         this.id = id;
+        this.passwd = passwd;
         this.name = name;
         this.subjects = subjects;
         this.marks = marks;
-        this.grantStat = grantStat;
     }
 
     public String getId() {
         return id;
     }
+    public String getPasswd() { return passwd; }
     public String getName() {
         return name;
     }
