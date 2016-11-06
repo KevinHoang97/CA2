@@ -1,5 +1,4 @@
 // Using Bad-SUDO CUSTOM EXTENDED Source==>https://github.com/jajavaa/Bad-SUDO
-// SUDO CODE NOT COMPLETE.
 
 CLASS Grants :
 
@@ -36,7 +35,6 @@ CLASS Grants :
         STRING choice EQUALS ""
         WHILE LOOP IF choice MATCHES ""
             PRINT "\tab\tab Student Finance System"
-            PRINT "0. Register Details"
             PRINT "1. Calculate Student Grant"
             PRINT "2. Current Overall Student Average"
             PRINT "3. Fee Data"
