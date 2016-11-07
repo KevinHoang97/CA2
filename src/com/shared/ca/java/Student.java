@@ -13,9 +13,8 @@ public class Student {
     private int[] marks = new int[4];
     private int grantStat = 0;
 
-    public Student(String id, String passwd, String name, String[] subjects, int[] marks) {
+    public Student(String id, String name, String[] subjects, int[] marks) {
         this.id = id;
-        this.passwd = passwd;
         this.name = name;
         this.subjects = subjects;
         this.marks = marks;
