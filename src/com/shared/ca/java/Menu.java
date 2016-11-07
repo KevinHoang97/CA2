@@ -1,7 +1,12 @@
 package com.shared.ca.java;
 
+import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
+
+import javax.jws.soap.SOAPMessageHandler;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.stream.Stream;
+
 /**
  * Created by Konrad Gladysz on 02/11/2016.
  * This class is part of 'CA2 for Java'.
@@ -17,11 +22,12 @@ public class Menu {
         // Debug
     }
     private Menu() {
-        auth();
-        // Debug
+//         Debug
         String[] sub = {"Software Development","Mathematics","Learning to Learn","Computer Architecture"};
-        int[] marks = {100,90,80,70};
-        students.add(new Student("X00127485", "pass", "Konrad Gladysz",sub,marks));
+        int[] marks = {40,40,40,40};
+        students.add(new Student("X", "Konrad Gladysz",sub,marks));
+        studentGrant("X");
+        feeData("X");
     }
     private void auth() {
         String user;
@@ -36,16 +42,8 @@ public class Menu {
             user = input.nextLine();
             System.out.print("Enter password: ");
             password = input.nextLine();
-            if(!user.equals("")&&user.charAt(0) == 'X'){
-                for(Student tmp: students) {
-                    if(tmp.getId().equals(user)) {
-                        if(tmp.getPasswd().equals(password)) {
-                            landing(user);
-                        }
-                    }
-                }
-            } else {
-                System.out.println("Wrong username or password.");
+            if(user.charAt(0) == 'X' && !user.equals("")) {
+                landing(user);
             }
         }
     }
@@ -63,12 +61,16 @@ public class Menu {
                 case "1":
                     register();
                     studentGrant(xid);
+                    landing(xid);
                     break;
                 case "2":
                     System.out.println("Your current overall average result is: " + studentAvg(xid));
+                    landing(xid);
                     break;
                 case "3":
-                    //feeData();
+                    studentGrant(xid);
+                    feeData(xid);
+                    landing(xid);
                     break;
                 case "4":
                     //grantCategoryInformation();
@@ -110,39 +112,28 @@ public class Menu {
             System.out.print("\nEnter mark for "+subjects[i]+": ");
             marks[i] = input.nextInt();
         }
-        String passwd = "";
-        for(int i = 0; i < 3; i++) {
-            System.out.print("\n Create a password");
-            passwd = input.nextLine();
-            if(passwd.equals("")) {
-
-            }
-
-        }
-        students.add(new Student(id,passwd,name,subjects,marks));
-        landing();
+        students.add(new Student(id,name,subjects,marks));
+        landing(id);
     }
     private void  studentGrant(String xid) {
         for(Student temp: students) {
             double avg = studentAvg(temp.getId());
-            if (avg >=  90) {
-                System.out.println("You are eligible for: " + fee / 1.0 + " which is : 100%");
-                temp.setGrantStat(100);
-            }
-            else if (avg < 90) {
-                System.out.println("You are eligible for: " + fee / .75 + " which is : 75%");
-                temp.setGrantStat(75);
-            }
-            else if(avg < 70) {
-                System.out.println("You are eligible for: " + fee / .50 + " which is : 50%");
-                temp.setGrantStat(50);
-            }
-            else if (avg < 50) {
-                System.out.println("You are not eligible for a grant.");
-                temp.setGrantStat(0);
+            if(temp.getId().equals(xid)) {
+                if (avg >= 90) {
+                    System.out.println("You are eligible for: " + fee * 1.0 + " which is : 100%");
+                    temp.setGrantStat(100);
+                } else if (avg < 90 && avg >= 70) {
+                    System.out.println("You are eligible for: " + fee * .75 + " which is : 75%");
+                    temp.setGrantStat(75);
+                } else if (avg < 70 && avg >= 50) {
+                    System.out.println("You are eligible for: " + fee * .50 + " which is : 50%");
+                    temp.setGrantStat(50);
+                } else if (avg < 50) {
+                    System.out.println("You are not eligible for a grant.");
+                    temp.setGrantStat(0);
+                }
             }
         }
-        landing(xid);
     }
     private double studentAvg(String xid) {
         int[] marks = new int[0];
@@ -158,4 +149,40 @@ public class Menu {
         avg /= marks.length;
         return avg;
     }
+
+    //fee data
+    private void feeData(String xid){
+        for(Student tmp: students){
+            if(tmp.getId().equals(xid)) {
+                System.out.println("Fee covered by grant: " + (fee*tmp.getGrantStat()/100));
+            }
+        }
+    }
+    private void grantCategoryInformation() {
+        int noGrant = 0, half = 0, fourths = 0, full = 0;
+        for(Student tmp:students ) {
+            switch(tmp.getGrantStat()){
+                case 0:
+                    noGrant++;
+                    break;
+                case 50:
+                    half++;
+                    break;
+                case 75:
+                    fourths++;
+                    break;
+                case 100:
+                    full++;
+                    break;
+        }
+            System.out.println("students with 100% :"+full);
+            System.out.println("students with 75%:"+fourths);
+            System.out.println("students with 50% :"+half);
+            System.out.println("students with 0% :"+noGrant);
+    }
+
+
+    }
 }
+
+
